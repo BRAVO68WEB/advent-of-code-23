@@ -1,6 +1,6 @@
 {
-  "name": "day-1",
-  "module": "index.ts",
+  "name": "1",
+  "module": "code.ts",
   "type": "module",
   "devDependencies": {
     "bun-types": "latest"
