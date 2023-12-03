@@ -1,3 +1,3 @@
-# Day 2: Cube Conundrum
+# Day 3: Gear Ratios
 
-Read the [problem statement](https://adventofcode.com/2023/day/2) carefully.
+Read the [problem statement](https://adventofcode.com/2023/day/3) carefully.
