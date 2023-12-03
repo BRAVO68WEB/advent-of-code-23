@@ -1,6 +1,4 @@
-import fs from 'fs';
-
-const input = fs.readFileSync('./input.txt', 'utf8');
+const input = await Bun.file(`${import.meta.dir}/input.txt`).text();
 
 const lines = input.split('\n');
 const partone = lines.map((line) => {
