@@ -1,3 +1,4 @@
+const pkg = await Bun.file(`${import.meta.dir}/package.json`).json();
 const input = await Bun.file(`${import.meta.dir}/input.txt`).text();
 
 const rows = input.trim().split("\n");
@@ -39,7 +40,8 @@ const sumOfAllAdj = rows.reduce(
   0,
 );
 
-console.log("Part 1 : ", sumOfAllAdj);
+console.log("Day", pkg.name, "|", "Part 1 : ", sumOfAllAdj);
+
 
 const isDigit = (char: string) => /\d/.test(char);
 
@@ -93,4 +95,4 @@ const sumOfAdjOnly = rows.reduce((total, row, y) => {
 	);
 }, 0);
   
-console.log("Part 2 : ", sumOfAdjOnly);
+console.log("Day", pkg.name, "|", "Part 2 : ", sumOfAdjOnly);

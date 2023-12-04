@@ -1,3 +1,4 @@
+const pkg = await Bun.file(`${import.meta.dir}/package.json`).json();
 const input = await Bun.file(`${import.meta.dir}/input.txt`).text();
 
 const lines = input.split('\n');
@@ -64,6 +65,8 @@ const sum = (acc: number, curr: number) => acc + curr;
 
 const partone = lines.map(parse).filter(gameIsValid).map((game) => game.id).reduce(sum, 0);
 
+console.log("Day", pkg.name, "|", "Part 1 : ", partone);
+
 const minCubesToPlayGame = lines.map(parse).map((game) => {
     const red = Math.max(...game.cubes.map((cube) => cube.red));
     const green = Math.max(...game.cubes.map((cube) => cube.green));
@@ -87,5 +90,4 @@ const calProd = minCubesToPlayGame.map((game) => {
 
 const parttwo = calProd.reduce(sum, 0);
 
-console.log("Part 1 : ", partone);
-console.log("Part 2 : ", parttwo);
+console.log("Day", pkg.name, "|", "Part 2 : ", parttwo);

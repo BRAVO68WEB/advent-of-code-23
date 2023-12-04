@@ -1,3 +1,4 @@
+const pkg = await Bun.file(`${import.meta.dir}/package.json`).json();
 const input = await Bun.file(`${import.meta.dir}/input.txt`).text();
 
 const lines = input.split('\n');
@@ -26,7 +27,7 @@ const partone = lines.map((line) => {
 
 const sum1 = partone.reduce((acc, curr) => acc + parseInt(curr, 10), 0);
 
-console.log("Part 1 : ", sum1);
+console.log("Day", pkg.name, "|", "Part 1 : ", sum1);
 
 const numbers = {
 	one: '1',
@@ -86,4 +87,4 @@ const parttwo = lines.map((line) => {
 
 const sum2 = parttwo.reduce((acc, curr) => acc + parseInt(curr, 10), 0);
 
-console.log("Part 2 : ", sum2);
+console.log("Day", pkg.name, "|", "Part 2 : ", sum2);

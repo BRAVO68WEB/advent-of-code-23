@@ -1,5 +1,5 @@
 {
-  "name": "day-2",
+  "name": "4",
   "module": "code.ts",
   "type": "module",
   "devDependencies": {
@@ -7,5 +7,9 @@
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "bun run code.ts"
   }
 }

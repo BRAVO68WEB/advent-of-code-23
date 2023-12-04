@@ -1,3 +1,4 @@
+const pkg = await Bun.file(`${import.meta.dir}/package.json`).json();
 const input = await Bun.file(`${import.meta.dir}/input.txt`).text();
 
 const lines = input.split("\n");
@@ -50,7 +51,7 @@ for (const card of cards) {
 	totalWinscore += card.winscore;
 }
 
-console.log("Part 1: ", totalWinscore);
+console.log("Day", pkg.name, "|", "Part 1 : ", totalWinscore);
 
 let sumOfPileup = 0;
 
@@ -69,4 +70,4 @@ while (queue.length > 0) {
   }
 }
 
-console.log("Part 2: ", sumOfPileup);
+console.log("Day", pkg.name, "|", "Part 2 : ", sumOfPileup);
