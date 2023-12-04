@@ -1,5 +1,5 @@
 const pkg = await Bun.file(`${import.meta.dir}/package.json`).json();
-const input = await Bun.file(`${import.meta.dir}/input.txt`).text();
+const input = await Bun.file(`${import.meta.dir}/../../input/3.txt`).text();
 
 const rows = input.trim().split("\n");
 const height = rows.length;

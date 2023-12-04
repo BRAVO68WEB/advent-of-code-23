@@ -1,5 +1,5 @@
 const pkg = await Bun.file(`${import.meta.dir}/package.json`).json();
-const input = await Bun.file(`${import.meta.dir}/input.txt`).text();
+const input = await Bun.file(`${import.meta.dir}/../../input/1.txt`).text();
 
 const lines = input.split('\n');
 const partone = lines.map((line) => {
