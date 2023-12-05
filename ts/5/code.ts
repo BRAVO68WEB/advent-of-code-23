@@ -20,7 +20,7 @@ export interface IMapping {
 	rangeLength: number;
 }
 
-function seedMappings(str: string): IMapping[] {
+const seedMappings = (str: string): IMapping[] => {
 	const mappings = str
 		.split(":\n")[1]
 		.split("\n")
@@ -33,7 +33,7 @@ function seedMappings(str: string): IMapping[] {
 	}));	
 }
 
-export function parseInput(input: string[]): IAlmanac {
+export const parseInput = (input: string[]): IAlmanac => {
 	const chunks = input.join("\n").split("\n\n");
 
 	const seeds = chunks[0]
@@ -63,7 +63,7 @@ export function parseInput(input: string[]): IAlmanac {
 	};
 }
 
-export function mapValue(value: number, mappings: IMapping[]): number {
+export const mapValue = (value: number, mappings: IMapping[]): number => {
 	const mapping = mappings.find(
 		(mapping) =>
 		mapping.srcRangeStart <= value &&
@@ -77,10 +77,10 @@ export function mapValue(value: number, mappings: IMapping[]): number {
 	return mapping.dstRangeStart + offset;
 }
   
-export function getSeedToLocationMapping(
+export const getSeedToLocationMapping = (
 	seed: number,
 	mappings: IAlmanac["mappings"]
-): number {
+): number => {
 	const soil = mapValue(seed, mappings.seedToSoil);
 	const fertilizer = mapValue(soil, mappings.soilToFertilizer);
 	const water = mapValue(fertilizer, mappings.fertilizerToWater);
