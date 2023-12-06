@@ -9,7 +9,8 @@ This is my repository for the [Advent of Code 2023](https://adventofcode.com/202
 | Day 3   | [Check Solution](3/README.md) |
 | Day 4   | [Check Solution](4/README.md) |
 | Day 5   | [Check Solution](5/README.md) |
-| Day 6   | Not Released                  |
+| Day 6   | [Check Solution](6/README.md) |
+| Day 7   | Not Released                  |
 
 ## How to run
 
