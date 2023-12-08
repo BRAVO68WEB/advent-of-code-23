@@ -2,18 +2,24 @@
   "name": "mono",
   "private": true,
   "scripts": {
-    "dev": "turbo dev"
+    "dev": "turbo dev",
+    "aoc": "turbo aoc"
   },
   "devDependencies": {
     "@bravo68web/tsconfig": "^1.2.2",
+    "bun-types": "latest",
     "prettier": "^3.1.0",
     "turbo": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
   },
   "engines": {
     "node": ">=18"
   },
   "packageManager": "bun@1.0.10",
   "workspaces": [
-    "ts/*"
+    "ts/*",
+    "libs/*"
   ]
 }

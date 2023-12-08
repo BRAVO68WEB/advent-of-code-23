@@ -3,7 +3,7 @@ const input = await Bun.file(`${import.meta.dir}/../../input/5.txt`).text();
 
 import { Worker } from "worker_threads";
 
-import { parseInput, getSeedToLocationMapping } from "./helper.ts";
+import { parseInput, getSeedToLocationMapping } from "./helper.js";
 
 const lines = input.split("\n");
 const { seeds, mappings } = parseInput(lines);
