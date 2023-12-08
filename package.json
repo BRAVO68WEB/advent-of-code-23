@@ -3,7 +3,8 @@
   "private": true,
   "scripts": {
     "dev": "turbo dev",
-    "aoc": "turbo aoc"
+    "aoc": "turbo aoc",
+    "build": "turbo build"
   },
   "devDependencies": {
     "@bravo68web/tsconfig": "^1.2.2",
