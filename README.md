@@ -1,5 +1,7 @@
 # Advent of Code 2023
 
+![AoC23](https://repository-images.githubusercontent.com/726431802/c8e91bfc-1db4-4fa8-93b2-dcb8cf18cc0c)
+
 This is my repository for the [Advent of Code 2023](https://adventofcode.com/2023) challenge.
 
 Languages used:
