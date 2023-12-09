@@ -1,7 +1,6 @@
 {
   "name": "05",
   "module": "code.ts",
-  "type": "module",
   "devDependencies": {
     "bun-types": "latest"
   },
@@ -11,5 +10,6 @@
   "scripts": {
     "build": "tsc",
     "dev": "bun run code.ts"
-  }
+  },
+  "type": "module"
 }
