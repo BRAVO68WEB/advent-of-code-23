@@ -6,7 +6,8 @@
     "bun-types": "latest"
   },
   "scripts": {
-    "aoc": "bun run index.ts"
+    "aoc": "aoc",
+    "aoc:today": "bun run index.ts"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
