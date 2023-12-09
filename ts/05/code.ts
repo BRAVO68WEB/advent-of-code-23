@@ -4,13 +4,11 @@ const input = await Bun.file(`${import.meta.dir}/../../input/5.txt`).text();
 const parse = (input: string) => {
 	const [seeds, ...sections] = input.split('\n\n').map((s) => s.trim())
 	return [
-	  seeds
-		.match(/seeds: ([\d ]*)/)![1]
+	  RegExp(/seeds: ([\d ]*)/).exec(seeds)![1]
 		.split(' ')
 		.map(Number),
 	  sections.map((s) =>
-		s
-		  .match(/\w+-to-\w+ map:([\d \n]*)/)![1]
+		RegExp(/\w+-to-\w+ map:([\d \n]*)/).exec(s)![1]
 		  .trim()
 		  .split('\n')
 		  .map((row) => {
