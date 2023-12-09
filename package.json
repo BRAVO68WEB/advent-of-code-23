@@ -2,7 +2,7 @@
   "name": "mono",
   "private": true,
   "scripts": {
-    "dev": "turbo dev",
+    "dev": "turbo dev --concurrency 30",
     "aoc": "turbo aoc",
     "build": "turbo build"
   },
