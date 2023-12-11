@@ -14,7 +14,8 @@ This is my repository for the [Advent of Code 2023](https://adventofcode.com/202
 | Day 8   | [Check Solution](08/README.md) |
 | Day 9   | [Check Solution](09/README.md) |
 | Day 10  | [Check Solution](10/README.md) |
-| Day 11  | Not Released                   |
+| Day 11  | [Check Solution](11/README.md) |
+| Day 12  | Not Released                   |
 
 ## How to run
 

@@ -14,6 +14,9 @@
     },
     "aoc": {
       "cache": false
+    },
+    "aoc:today": {
+      "cache": false
     }
   }
 }
