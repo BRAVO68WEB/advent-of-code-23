@@ -13,19 +13,22 @@ fn main() {
         d6::main,
         d7::main,
         d8::main,
+        d9::main,
+        d10::main,
+        d11::main,
+        d12::main,
     ];
 
     let now = std::time::Instant::now();
 
     for (day, main) in mains.iter().enumerate() {
         println!(
-            "------------------------------------ DAY {} ------------------------------------",
+            "-- Day {} --",
             day + 1
         );
         main();
         println!();
     }
 
-    println!("------------------------------------  ALL   ------------------------------------");
     println!("Execution time: {:?}\n", now.elapsed());
 }

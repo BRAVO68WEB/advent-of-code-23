@@ -33,8 +33,6 @@ pub fn part2(input: &str) -> u32 {
 
 pub fn main() {
     let input = std::fs::read_to_string("../../input/1.txt").expect("Input file not found");
-    let now = std::time::Instant::now();
-    println!("PART 1 = {}", part1(&input));
-    println!("PART 2 = {}", part2(&input));
-    println!("Execution time: {:?}", now.elapsed());
+    println!("Part 1 : {}", part1(&input));
+    println!("Part 2 : {}", part2(&input));
 }
