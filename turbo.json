@@ -17,6 +17,9 @@
     },
     "aoc:today": {
       "cache": false
+    },
+    "rust": {
+      "cache": false
     }
   }
 }

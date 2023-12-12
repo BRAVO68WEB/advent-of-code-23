@@ -12,11 +12,11 @@ Languages used:
 
 ### TypeScript
 
-Check [README.md](ts/README.md) in the `ts` directory.
+Check [README.md](code/ts/README.md) in the `ts` directory.
 
 ### Rust
 
-Coming soon...
+Check [README.md](code/rs/README.md) in the `ts` directory.
 
 ## Checklists
 

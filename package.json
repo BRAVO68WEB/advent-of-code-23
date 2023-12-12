@@ -2,7 +2,8 @@
   "name": "mono",
   "private": true,
   "scripts": {
-    "dev": "turbo dev --concurrency 30",
+    "ts": "turbo dev --concurrency 30",
+    "rs": "turbo rust",
     "aoc": "turbo aoc",
     "new": "turbo aoc:today",
     "build": "turbo build"
@@ -22,6 +23,7 @@
   "packageManager": "bun@1.0.10",
   "workspaces": [
     "code/ts/*",
+    "code/rs",
     "libs/*"
   ],
   "module": "index.ts",

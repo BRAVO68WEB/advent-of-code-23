@@ -1,8 +1,28 @@
 [package]
-name = "rs"
+name = "aoc-2023"
 version = "0.1.0"
 edition = "2021"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+authors = ["BRAVO688WEB <hi@b68.dev>"]
+default-run = "aoc-2023"
 
 [dependencies]
+itertools = "0.12.0"
+num = "0.4.1"
+pathfinding = "4.4.0"
+rayon = "1.8.0"
+
+[profile.release]
+lto = "fat"
+codegen-units = 1
+
+[[bin]]
+name = "day01"
+path = "src/1.rs"
+
+[[bin]]
+name = "day02"
+path = "src/2.rs"
+
+[[bin]]
+name = "day03"
+path = "src/3.rs"
