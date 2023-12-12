@@ -5,6 +5,7 @@
 This is my repository for the [Advent of Code 2023](https://adventofcode.com/2023) challenge.
 
 Languages used:
+
 - [TypeScript + Bun](https://bun.sh/)
 - [Rust](https://www.rust-lang.org/)
 
