@@ -21,7 +21,7 @@
   },
   "packageManager": "bun@1.0.10",
   "workspaces": [
-    "ts/*",
+    "code/ts/*",
     "libs/*"
   ],
   "module": "index.ts",
