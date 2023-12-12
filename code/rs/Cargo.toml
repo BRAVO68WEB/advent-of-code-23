@@ -17,12 +17,33 @@ codegen-units = 1
 
 [[bin]]
 name = "day01"
-path = "src/1.rs"
+path = "src/d1.rs"
 
 [[bin]]
 name = "day02"
-path = "src/2.rs"
+path = "src/d2.rs"
 
 [[bin]]
 name = "day03"
-path = "src/3.rs"
+path = "src/d3.rs"
+
+[[bin]]
+name = "day04"
+path = "src/d4.rs"
+
+[[bin]]
+name = "day05"
+path = "src/d5.rs"
+
+
+[[bin]]
+name = "day06"
+path = "src/d6.rs"
+
+[[bin]]
+name = "day07"
+path = "src/d7.rs"
+
+[[bin]]
+name = "day08"
+path = "src/d8.rs"
