@@ -20,6 +20,12 @@
     },
     "rust": {
       "cache": false
+    },
+    "start": {
+      "cache": false
+    },
+    "ts": {
+      "cache": false
     }
   }
 }

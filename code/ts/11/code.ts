@@ -1,4 +1,3 @@
-const pkg = await Bun.file(`${import.meta.dir}/package.json`).json();
 const input = await Bun.file(`${import.meta.dir}/../../../input/11.txt`).text();
 
 const parseInput = (input: string, part2 = false) => {
@@ -54,13 +53,13 @@ function getTotalGalaxyDistance(galaxies: Galaxy[]) {
 	return totalDistance
 }
 
-export const part1 = (input: string): string | number => {
+const part1 = (input: string): string | number => {
 	return getTotalGalaxyDistance(parseInput(input))
 }
 
-export const part2 = (input: string): string | number => {
+const part2 = (input: string): string | number => {
 	return getTotalGalaxyDistance(parseInput(input, true))
 }
 
-console.log("Day", pkg.name, "|", "Part 1 : ", part1(input));
-console.log("Day", pkg.name, "|", "Part 2 : ", part2(input));
+export const partone = part1(input);
+export const parttwo = part2(input);

@@ -1,4 +1,3 @@
-const pkg = await Bun.file(`${import.meta.dir}/package.json`).json();
 const input = await Bun.file(`${import.meta.dir}/../../../input/7.txt`).text();
 
 const lines = input.split("\n")
@@ -46,12 +45,10 @@ const sortCards = (cardsA: string[], cardsB: string[]) => {
   return cardOrder(cardsA, cardsB);
 };
 
-const sum1 = lines
+export const partone = lines
   .slice()
   .sort((a, b) => sortCards(a[0], b[0]))
   .reduce((acc, v, i) => acc + v[1] * (i + 1), 0);
-
-console.log("Day", pkg.name, "|", "Part 1 : ", sum1);
 
 const cardsTypesWithJokers = <Array<(counts: number[], jokersCount: number) => boolean>>[
   (counts, jokersCount) => jokersCount === 5 || counts.some(x => x === 5 - jokersCount),
@@ -100,9 +97,7 @@ const sortCardsWithJokers = (cardsA: string[], cardsB: string[]) => {
   return cardOrderWithJokers(cardsA, cardsB);
 };
 
-const sum2 = lines
+export const parttwo = lines
   .slice()
   .sort((a, b) => sortCardsWithJokers(a[0], b[0]))
   .reduce((acc, v, i) => acc + v[1] * (i + 1), 0);
-
-console.log("Day", pkg.name, "|", "Part 2 : ", sum2);

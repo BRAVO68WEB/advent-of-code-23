@@ -1,4 +1,3 @@
-const pkg = await Bun.file(`${import.meta.dir}/package.json`).json();
 const input = await Bun.file(`${import.meta.dir}/../../../input/10.txt`).text();
 
 type Point = [number, number]
@@ -166,5 +165,5 @@ export const part2 = (input: string) => {
   return sum
 }
 
-console.log("Day", pkg.name, "|", "Part 1 : ", part1(input));
-console.log("Day", pkg.name, "|", "Part 2 : ", part2(input));
+export const partone = part1(input);
+export const parttwo = part2(input);

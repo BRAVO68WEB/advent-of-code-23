@@ -27,7 +27,7 @@ const isAdjacent = (x: number, y: number) => {
   return false;
 };
 
-const sumOfAllAdj = rows.reduce(
+export const partone = rows.reduce(
   (acc, row, y) =>
     [...row.matchAll(/\d+/g)].reduce((rowSum, match) => {
       const x = match.index || 0;
@@ -39,9 +39,6 @@ const sumOfAllAdj = rows.reduce(
     }, acc),
   0,
 );
-
-console.log("Day", pkg.name, "|", "Part 1 : ", sumOfAllAdj);
-
 
 const isDigit = (char: string) => /\d/.test(char);
 
@@ -79,7 +76,7 @@ const getAdjacent = (x: number, y: number, pos: Set<string>) => {
 	return partNumbers;
 };
 
-const sumOfAdjOnly = rows.reduce((total, row, y) => {
+export const parttwo = rows.reduce((total, row, y) => {
 	const pos = new Set<string>();
 	return (
 		total +
@@ -94,5 +91,3 @@ const sumOfAdjOnly = rows.reduce((total, row, y) => {
 		}, 0)
 	);
 }, 0);
-  
-console.log("Day", pkg.name, "|", "Part 2 : ", sumOfAdjOnly);

@@ -64,8 +64,9 @@ export const solver = (input: string, n: number) => {
   }, input.trim().split('\n'))
 }
 
-export const part1 = (input: string) => solver(input, 1)
-export const part2 = (input: string) => solver(input, 5)
+const part1 = (input: string) => solver(input, 1)
+const part2 = (input: string) => solver(input, 5)
 
-console.log("Day", pkg.name, "|", "Part 1 : ", part1(input));
-console.log("Day", pkg.name, "|", "Part 2 : ", part2(input));
+export const partone = part1(input);
+export const parttwo = part2(input);
+

@@ -16,8 +16,7 @@ const calc = (times: number[], dists: number[]) => {
 
 let [times, dists] = input.split('\n').map((line) => line.match(/\d+/g)!.map(Number));
 
-console.log("Day", pkg.name, "|", "Part 1 : ", calc(times, dists));
+export const partone = calc(times, dists);
 
 [times, dists] = input.split('\n').map((line) => [+line.match(/\d+/g)!.join('')])
-
-console.log("Day", pkg.name, "|", "Part 2 : ", calc(times, dists));
+export const parttwo = calc(times, dists);

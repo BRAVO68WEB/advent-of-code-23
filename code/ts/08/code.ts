@@ -1,4 +1,3 @@
-const pkg = await Bun.file(`${import.meta.dir}/package.json`).json();
 const input = await Bun.file(`${import.meta.dir}/../../../input/8.txt`).text();
 
 const [instructions, network] = input.split('\n\n');
@@ -19,9 +18,7 @@ const solver = (endCondition: any) => (position: any): number => {
 }
 
 const p1s = solver((position: any) => position === 'ZZZ');
-const p1 = p1s('AAA');
-
-console.log("Day", pkg.name, "|", "Part 1 : ", p1);
+export const partone = p1s('AAA');
 
 const gcd = (a: number, b: number): number => {
   return b ? gcd(b, a % b) : a;
@@ -35,6 +32,4 @@ let startPositions = Object.keys(nodeMap).filter(key => key.endsWith('A'));
 const p2s = solver((position: any) => position.endsWith('Z'));
 const stepsForEacStart = startPositions.map(position => p2s(position));
 
-const p2 = stepsForEacStart.reduce((a, b) => lcm(a, b));
-
-console.log("Day", pkg.name, "|", "Part 2 : ", p2);
+export const parttwo = stepsForEacStart.reduce((a, b) => lcm(a, b));

@@ -46,7 +46,7 @@ const toSeed = (maps: Maps, value: Seed) =>
 
 const solve = (seeds: Seed[], maps: Maps) => Math.min(...seeds.map((s) => toLocation(maps, s)))
 
-export const part1 = (input: string) => solve(...parse(input))
+const part1 = (input: string) => solve(...parse(input))
 
 const isValidSeed = (seeds: Seed[]) => (seed: Seed) => {
 	for (let i = 0; i < seeds.length; i += 2) {
@@ -56,7 +56,7 @@ const isValidSeed = (seeds: Seed[]) => (seed: Seed) => {
 	return false
 }
 
-export const part2 = (input: string) => {
+const part2 = (input: string) => {
 	const [seeds, maps] = parse(input)
 
 	const possibleSeeds = maps
@@ -68,6 +68,5 @@ export const part2 = (input: string) => {
 	return solve(possibleSeeds, maps)
 }
 
-console.log("Day", pkg.name, "|", "Part 1 : ", part1(input));
-
-console.log("Day", pkg.name, "|", "Part 2 : ", part2(input));
+export const partone = part1(input);
+export const parttwo = part2(input);

@@ -1,8 +1,8 @@
-const pkg = await Bun.file(`${import.meta.dir}/package.json`).json();
 const input = await Bun.file(`${import.meta.dir}/../../../input/1.txt`).text();
 
 const lines = input.split('\n');
-const partone = lines.map((line) => {
+
+const sp1 = lines.map((line) => {
     let firstDigit: string | undefined;
     let lastDigit: string | undefined;
     for (let i = 0; i < line.length; i++) {
@@ -25,9 +25,7 @@ const partone = lines.map((line) => {
     return ((firstDigit ?? '') + (lastDigit ?? ''));
 });
 
-const sum1 = partone.reduce((acc, curr) => acc + parseInt(curr, 10), 0);
-
-console.log("Day", pkg.name, "|", "Part 1 : ", sum1);
+export const partone = sp1.reduce((acc, curr) => acc + parseInt(curr, 10), 0);
 
 const numbers = {
 	one: '1',
@@ -52,7 +50,7 @@ const numbers = {
 
 const numbersAsKeys = Object.keys(numbers) as (keyof typeof numbers)[];
 
-const parttwo = lines.map((line) => {
+const sp2 = lines.map((line) => {
     let firstDigit: string | undefined;
     let lastDigit: string | undefined;
     for (let i = 0; i < line.length; i++) {
@@ -85,6 +83,4 @@ const parttwo = lines.map((line) => {
     return ((firstDigit ?? '') + (lastDigit ?? ''));
 });
 
-const sum2 = parttwo.reduce((acc, curr) => acc + parseInt(curr, 10), 0);
-
-console.log("Day", pkg.name, "|", "Part 2 : ", sum2);
+export const parttwo = sp2.reduce((acc, curr) => acc + parseInt(curr, 10), 0);
