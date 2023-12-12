@@ -6,7 +6,7 @@ This is my repository for the [Advent of Code 2023](https://adventofcode.com/202
 
 Languages used:
 - [TypeScript + Bun](https://bun.sh/)
-- [Rust](https://www.rust-lang.org/) (maybe)
+- [Rust](https://www.rust-lang.org/)
 
 ## Usage
 
@@ -16,7 +16,7 @@ Check [README.md](code/ts/README.md) in the `ts` directory.
 
 ### Rust
 
-Check [README.md](code/rs/README.md) in the `ts` directory.
+Check [README.md](code/rs/README.md) in the `rs` directory.
 
 ## Checklists
 
