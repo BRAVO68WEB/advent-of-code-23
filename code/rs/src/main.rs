@@ -17,6 +17,7 @@ fn main() {
         d10::main,
         d11::main,
         d12::main,
+        d13::main,
     ];
 
     let now = std::time::Instant::now();
