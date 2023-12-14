@@ -12,7 +12,13 @@ This is my repository for the [Advent of Code 2023](https://adventofcode.com/202
 | Day 6   | [Check Solution](src/d6.rs)    |
 | Day 7   | [Check Solution](src/d7.rs)    |
 | Day 8   | [Check Solution](src/d8.rs)    |
-| Day 9   | Not Released                   |
+| Day 9   | [Check Solution](src/d9.rs)    |
+| Day 10  | [Check Solution](src/d10.rs)   |
+| Day 11  | [Check Solution](src/d11.rs)   |
+| Day 12  | [Check Solution](src/d12.rs)   |
+| Day 13  | [Check Solution](src/d13.rs)   |
+| Day 14  | [Check Solution](src/d14.rs)   |
+| Day 15  | Not Released                   |
 
 ## How to run
 
