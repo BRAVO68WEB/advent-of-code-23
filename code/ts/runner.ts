@@ -11,6 +11,7 @@ import { partone as d10p1, parttwo as d10p2} from './10/code';
 import { partone as d11p1, parttwo as d11p2} from './11/code';
 import { partone as d12p1, parttwo as d12p2} from './12/code';
 import { partone as d13p1, parttwo as d13p2} from './13/code';
+import { partone as d14p1, parttwo as d14p2} from './14/code';
 
 console.log(`-- Day 1 --`);
 console.log(`Part 1: ${d1p1}`);
@@ -51,3 +52,8 @@ console.log(`Part 2: ${d12p2}`);
 console.log(`-- Day 13 --`);
 console.log(`Part 1: ${d13p1}`);
 console.log(`Part 2: ${d13p2}`);
+console.log(`-- Day 14 --`);
+console.log(`Part 1: ${d14p1}`);
+console.log(`Part 2: ${d14p2}`);
+
+console.log(`-- xxxxxx --`);
