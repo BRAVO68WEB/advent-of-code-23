@@ -35,9 +35,23 @@ pub fn part1(data: &str) -> usize {
         .sum()
 }
 
+pub fn part2(data: &str) -> usize {
+    data.split("\n\n")
+        .map(|group| {
+            solve(&group.lines().collect::<Vec<_>>(), |x, y| {
+                let mut iter = x
+                    .iter()
+                    .rev()
+                    .zip(y.iter())
+                    .flat_map(|(a, b)| a.chars().zip(b.chars()).filter(|(c, d)| c != d));
+                iter.next().is_some() && iter.next().is_none()
+            })
+        })
+        .sum()
+}
 
 pub fn main() {
     let input = std::fs::read_to_string("../../input/13.txt").expect("Input file not found");
     println!("Part 1 : {}", part1(&input));
-    // println!("Part 2 : {}", part2(&input));
+    println!("Part 2 : {}", part2(&input));
 }
