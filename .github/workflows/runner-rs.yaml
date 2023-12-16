@@ -1,20 +1,10 @@
-name: AoC Test Runner
+name: AoC Test Runner (Rust)
 on: 
     push:
         branches: [ main ]
     pull_request:
         branches: [ main ]
 jobs:
-  typescript:
-    name: Test Typescript Solutions
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: oven-sh/setup-bun@v1
-
-      - run: bun i -g turbo@latest
-      - run: bun ts
-
   rust:
     name: Test Rust Solutions
     runs-on: ubuntu-latest
