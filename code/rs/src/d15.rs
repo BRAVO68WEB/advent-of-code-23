@@ -28,7 +28,7 @@ fn hash(input: &str) -> u8 {
     out
 }
 
-fn part2(input: &str) -> String {
+fn part2(input: &str) -> usize {
     let input = parse(input);
     let mut boxes = vec![Vec::new(); 256];
 
@@ -48,18 +48,18 @@ fn part2(input: &str) -> String {
         }
     }
 
-    let mut acc = 0;
+    let mut acc: usize = 0;
     for (i, e) in boxes.iter().enumerate() {
         for (j, f) in e.iter().enumerate() {
             acc += (i + 1) * (j + 1) * f.1 as usize;
         }
     }
     // return as integer
-    acc.to_string()
+    acc
 }
 
 pub fn main() {
     let input = std::fs::read_to_string("../../input/15.txt").expect("Input file not found");
     println!("Part 1 : {}", part1(&input));
-    println!("Part 2 : {:?}", part2(&input));
+    println!("Part 2 : {}", part2(&input).to_string());
 }
