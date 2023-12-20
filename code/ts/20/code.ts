@@ -70,15 +70,12 @@ function getSentPulses(
 		const inputIndex = module.inputList.indexOf(from)
 		module.lastInputs[inputIndex] = pulse
 		pulseType = module.lastInputs.every((i) => i === 'high') ? 'low' : 'high'
-	} else {
-		// flipflop
-		if (pulse === 'low') {
+	} else if (pulse === 'low') {
 			module.on = !module.on
 			pulseType = module.on ? 'high' : 'low'
-		} else {
-			return false
-		}
-	}
+  } else {
+    return false
+  }
 	const toPulse = module.destinations.map(
 		(d) => [getModule(d), pulseType, module.name] as SentPulse
 	)
@@ -96,7 +93,7 @@ const part1 = (input: string): string | number => {
 	const pulses = { high: 0, low: 0 }
 	for (let i = 0; i < 1000; i++) {
 		let pulsedModules: SentPulse[] = initialPulses
-		pulses.low += 1 + pulsedModules.length // Button press plus broadcast destinations
+		pulses.low += 1 + pulsedModules.length
 		while (pulsedModules.length > 0) {
 			const nextPulsedModules: SentPulse[] = []
 			for (const pulsedModule of pulsedModules) {
@@ -147,7 +144,6 @@ export const part2 = (input: string): string | number => {
 						if (!cycles.has(pulsedModule[0].name)) {
 							cycles.set(pulsedModule[0].name, buttonPresses)
 							if (cycles.size === sendsToRxInputs.length) {
-								// All cycles found, answer is LCM
 								return leastCommonMultiple(...cycles.values())
 							}
 						}
