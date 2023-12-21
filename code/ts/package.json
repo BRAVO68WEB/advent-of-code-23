@@ -5,29 +5,6 @@
   "scripts": {
     "ts": "bun run runner.ts"
   },
-  "dependencies": {
-    "1": "workspace:code/ts/1",
-    "2": "workspace:code/ts/2",
-    "3": "workspace:code/ts/3",
-    "4": "workspace:code/ts/4",
-    "5": "workspace:code/ts/5",
-    "6": "workspace:code/ts/6",
-    "7": "workspace:code/ts/7",
-    "8": "workspace:code/ts/8",
-    "9": "workspace:code/ts/9",
-    "10": "workspace:code/ts/10",
-    "11": "workspace:code/ts/11",
-    "12": "workspace:code/ts/12",
-    "13": "workspace:code/ts/13",
-    "14": "workspace:code/ts/14",
-    "15": "workspace:code/ts/15",
-    "16": "workspace:code/ts/16",
-    "17": "workspace:code/ts/17",
-    "18": "workspace:code/ts/18",
-    "19": "workspace:code/ts/19",
-    "20": "workspace:code/ts/20",
-    "21": "workspace:code/ts/21"
-  },
   "keywords": [],
   "author": "BRAVO68WEB",
   "license": "ISC"
