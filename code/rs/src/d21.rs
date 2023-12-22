@@ -133,7 +133,7 @@ pub fn part2(input: &'static str) -> String {
 }
 
 lazy_static! {
-    static ref INPUT: &'static str = { include_str!("../../../input/21.txt").trim() };
+    static ref INPUT: &'static str = include_str!("../../../input/21.txt").trim();
 }
 
 pub fn main() {
