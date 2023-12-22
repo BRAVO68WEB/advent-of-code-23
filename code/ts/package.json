@@ -1,11 +1,11 @@
 {
-  "name": "ts",
-  "version": "1.0.0",
-  "description": "Typescript Runner",
-  "scripts": {
-    "ts": "bun run runner.ts"
-  },
-  "keywords": [],
-  "author": "BRAVO68WEB",
-  "license": "ISC"
+    "name": "ts",
+    "version": "1.0.0",
+    "description": "Typescript Runner",
+    "license": "ISC",
+    "author": "BRAVO68WEB",
+    "scripts": {
+        "ts": "bun run runner.ts"
+    },
+    "keywords": []
 }

@@ -1,36 +1,38 @@
 {
-  "name": "mono",
-  "private": true,
-  "scripts": {
-    "start": "bun rs && bun ts",
-    "ts": "turbo ts",
-    "rs": "turbo rust",
-    "aoc": "turbo aoc",
-    "new": "turbo aoc:today",
-    "build": "turbo build",
-    "fmt": "bun fmt:rs && bun fmt:ts",
-    "fmt:rs": "cargo fmt",
-    "fmt:ts": "prettier --write ."
-  },
-  "devDependencies": {
-    "@bravo68web/tsconfig": "^1.2.2",
-    "bun-types": "latest",
-    "prettier": "^3.1.0",
-    "turbo": "latest"
-  },
-  "peerDependencies": {
-    "typescript": "^5.0.0"
-  },
-  "engines": {
-    "node": ">=18"
-  },
-  "packageManager": "bun@1.0.10",
-  "workspaces": [
-    "code/ts/*",
-    "code/ts",
-    "code/rs",
-    "libs/aoc"
-  ],
-  "module": "index.ts",
-  "type": "module"
+    "private": true,
+    "name": "mono",
+    "type": "module",
+    "module": "index.ts",
+    "scripts": {
+        "aoc": "turbo aoc",
+        "build": "turbo build",
+        "fmt": "bun fmt:rs && bun fmt:ts",
+        "fmt:rs": "cargo fmt",
+        "fmt:ts": "prettier --write .",
+        "new": "turbo aoc:today",
+        "rs": "turbo rust",
+        "start": "bun rs && bun ts",
+        "ts": "turbo ts"
+    },
+    "workspaces": [
+        "code/ts/*",
+        "code/ts",
+        "code/rs",
+        "libs/aoc"
+    ],
+    "peerDependencies": {
+        "typescript": "^5.0.0"
+    },
+    "devDependencies": {
+        "@bravo68web/prettier-config": "1.2.2",
+        "@bravo68web/tsconfig": "^1.2.2",
+        "bun-types": "latest",
+        "prettier": "^3.1.0",
+        "turbo": "latest"
+    },
+    "engines": {
+        "node": ">=18"
+    },
+    "packageManager": "bun@1.0.10",
+    "prettier": "@bravo68web/prettier-config"
 }

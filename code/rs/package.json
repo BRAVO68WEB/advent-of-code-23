@@ -1,11 +1,11 @@
 {
-  "name": "rs",
-  "version": "1.0.0",
-  "description": "Rust Cargo Runner",
-  "scripts": {
-    "rust": "cargo run"
-  },
-  "keywords": [],
-  "author": "BRAVO68WEB",
-  "license": "ISC"
+    "name": "rs",
+    "version": "1.0.0",
+    "description": "Rust Cargo Runner",
+    "license": "ISC",
+    "author": "BRAVO68WEB",
+    "scripts": {
+        "rust": "cargo run"
+    },
+    "keywords": []
 }

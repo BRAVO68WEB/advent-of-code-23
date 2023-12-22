@@ -1,15 +1,15 @@
 {
-  "name": "aoc-tool",
-  "module": "index.ts",
-  "type": "module",
-  "devDependencies": {
-    "bun-types": "latest"
-  },
-  "scripts": {
-    "aoc": "aoc",
-    "aoc:today": "bun run index.ts"
-  },
-  "peerDependencies": {
-    "typescript": "^5.0.0"
-  }
+    "name": "aoc-tool",
+    "type": "module",
+    "module": "index.ts",
+    "scripts": {
+        "aoc": "aoc",
+        "aoc:today": "bun run index.ts"
+    },
+    "peerDependencies": {
+        "typescript": "^5.0.0"
+    },
+    "devDependencies": {
+        "bun-types": "latest"
+    }
 }

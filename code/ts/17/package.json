@@ -1,18 +1,18 @@
 {
-  "name": "17",
-  "module": "code.ts",
-  "type": "module",
-  "devDependencies": {
-    "bun-types": "latest"
-  },
-  "peerDependencies": {
-    "typescript": "^5.0.0"
-  },
-  "scripts": {
-    "build": "tsc",
-    "dev": "bun run code.ts"
-  },
-  "dependencies": {
-    "heap-js": "^2.3.0"
-  }
+    "name": "17",
+    "type": "module",
+    "module": "code.ts",
+    "scripts": {
+        "build": "tsc",
+        "dev": "bun run code.ts"
+    },
+    "dependencies": {
+        "heap-js": "^2.3.0"
+    },
+    "peerDependencies": {
+        "typescript": "^5.0.0"
+    },
+    "devDependencies": {
+        "bun-types": "latest"
+    }
 }

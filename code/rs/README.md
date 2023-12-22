@@ -32,7 +32,7 @@ This is my repository for the [Advent of Code 2023](https://adventofcode.com/202
 
 ### Prerequisites
 
-- [Rustup](https://rustup.rs/)
+-   [Rustup](https://rustup.rs/)
 
 ### Run
 

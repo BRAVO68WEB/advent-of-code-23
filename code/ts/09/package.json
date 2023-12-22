@@ -1,15 +1,15 @@
 {
-  "name": "09",
-  "module": "code.ts",
-  "type": "module",
-  "devDependencies": {
-    "bun-types": "latest"
-  },
-  "peerDependencies": {
-    "typescript": "^5.0.0"
-  },
-  "scripts": {
-    "build": "tsc",
-    "dev": "bun run code.ts"
-  }
+    "name": "09",
+    "type": "module",
+    "module": "code.ts",
+    "scripts": {
+        "build": "tsc",
+        "dev": "bun run code.ts"
+    },
+    "peerDependencies": {
+        "typescript": "^5.0.0"
+    },
+    "devDependencies": {
+        "bun-types": "latest"
+    }
 }

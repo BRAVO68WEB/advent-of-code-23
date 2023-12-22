@@ -1,31 +1,31 @@
 {
-  "$schema": "https://turbo.build/schema.json",
-  "globalDependencies": ["**/.env.*local"],
-  "pipeline": {
-    "build": {
-      "dependsOn": ["^build"]
-    },
-    "lint": {
-      "dependsOn": ["^lint"]
-    },
-    "dev": {
-      "cache": false,
-      "persistent": true
-    },
-    "aoc": {
-      "cache": false
-    },
-    "aoc:today": {
-      "cache": false
-    },
-    "rust": {
-      "cache": false
-    },
-    "start": {
-      "cache": false
-    },
-    "ts": {
-      "cache": false
+    "$schema": "https://turbo.build/schema.json",
+    "globalDependencies": ["**/.env.*local"],
+    "pipeline": {
+        "aoc": {
+            "cache": false
+        },
+        "aoc:today": {
+            "cache": false
+        },
+        "build": {
+            "dependsOn": ["^build"]
+        },
+        "dev": {
+            "cache": false,
+            "persistent": true
+        },
+        "lint": {
+            "dependsOn": ["^lint"]
+        },
+        "rust": {
+            "cache": false
+        },
+        "start": {
+            "cache": false
+        },
+        "ts": {
+            "cache": false
+        }
     }
-  }
 }

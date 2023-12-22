@@ -1,23 +1,23 @@
 name: AoC Test Runner (Rust)
 on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+    push:
+        branches: [main]
+    pull_request:
+        branches: [main]
 jobs:
-  rust:
-    name: Test Rust Solutions
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: oven-sh/setup-bun@v1
-      - run: bun i -g turbo@latest
-      - name: Installing Rust
-        uses: actions-rust-lang/setup-rust-toolchain@v1
-      - name: Building with Cargo
-        uses: actions-rs/cargo@v1
-        with:
-          command: build
-          args: --release
-      - name: Testing with Cargo
-        run: bun rs
+    rust:
+        name: Test Rust Solutions
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - uses: oven-sh/setup-bun@v1
+            - run: bun i -g turbo@latest
+            - name: Installing Rust
+              uses: actions-rust-lang/setup-rust-toolchain@v1
+            - name: Building with Cargo
+              uses: actions-rs/cargo@v1
+              with:
+                  command: build
+                  args: --release
+            - name: Testing with Cargo
+              run: bun rs
