@@ -26,11 +26,10 @@ impl Card {
             'J' => {
                 if with_joker {
                     Self::Joker
-                }
-                else {
+                } else {
                     Self::J
                 }
-            },
+            }
             'T' => Self::T,
             n => Self::N(n.to_digit(10).unwrap() as u8),
         }
@@ -79,8 +78,12 @@ impl HandType {
             [(3, _), (2, _)] | [(2, _), (2, _), (_, Card::Joker)] => Self::FullHouse,
 
             // Three of a kind
-            [(3, _), (_, _), (_, _)] | [(2, Card::Joker), (1, _), (1, _), (1, _)] => Self::ThreeOfAKind,
-            cc @ [(2, _), (_, _), (_, _), (_, _)] if cc.contains(&(&1, &&Card::Joker)) => Self::ThreeOfAKind,
+            [(3, _), (_, _), (_, _)] | [(2, Card::Joker), (1, _), (1, _), (1, _)] => {
+                Self::ThreeOfAKind
+            }
+            cc @ [(2, _), (_, _), (_, _), (_, _)] if cc.contains(&(&1, &&Card::Joker)) => {
+                Self::ThreeOfAKind
+            }
 
             // Two pair
             [(2, _), (2, _), (_, _)] => Self::TwoPair,
@@ -127,7 +130,7 @@ impl Ord for Hand {
                     }
                 }
                 std::cmp::Ordering::Equal
-            },
+            }
             o => o,
         }
     }
@@ -139,7 +142,12 @@ pub fn part1(input: &str) -> usize {
         .map(|line| {
             let (cards, bid) = line.split_once(' ').unwrap();
             let bid = bid.parse::<usize>().unwrap();
-            let hand = Hand::new(cards.chars().map(|card| Card::from_char(card, false)).collect());
+            let hand = Hand::new(
+                cards
+                    .chars()
+                    .map(|card| Card::from_char(card, false))
+                    .collect(),
+            );
             (hand, bid)
         })
         .sorted_unstable_by_key(|(hand, _)| hand.clone())
@@ -155,7 +163,12 @@ pub fn part2(input: &str) -> usize {
         .map(|line| {
             let (cards, bid) = line.split_once(' ').unwrap();
             let bid = bid.parse::<usize>().unwrap();
-            let hand = Hand::new(cards.chars().map(|card| Card::from_char(card, true)).collect());
+            let hand = Hand::new(
+                cards
+                    .chars()
+                    .map(|card| Card::from_char(card, true))
+                    .collect(),
+            );
             (hand, bid)
         })
         .sorted_by_key(|(hand, _)| hand.clone())

@@ -15,7 +15,10 @@ fn get_points(line: &str) -> usize {
         .split_whitespace()
         .map(|n| n.parse::<u64>().unwrap())
         .collect::<Vec<_>>();
-    yours.iter().filter(|&number| winning.contains(number)).count()
+    yours
+        .iter()
+        .filter(|&number| winning.contains(number))
+        .count()
 }
 
 pub fn part1(input: &str) -> u64 {
@@ -32,13 +35,16 @@ pub fn part2(input: &str) -> u64 {
         .lines()
         .map(get_points)
         .enumerate()
-        .fold(vec![1; input.lines().count()], |mut how_many_cards, (card, points)| {
-            let cards = how_many_cards[card];
-            for n in &mut how_many_cards[card + 1..card + 1 + points] {
-                *n += cards;
-            }
-            how_many_cards
-        })
+        .fold(
+            vec![1; input.lines().count()],
+            |mut how_many_cards, (card, points)| {
+                let cards = how_many_cards[card];
+                for n in &mut how_many_cards[card + 1..card + 1 + points] {
+                    *n += cards;
+                }
+                how_many_cards
+            },
+        )
         .iter()
         .sum()
 }

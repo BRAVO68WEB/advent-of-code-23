@@ -1,4 +1,8 @@
-#![allow(clippy::must_use_candidate, clippy::missing_panics_doc, clippy::identity_op)]
+#![allow(
+    clippy::must_use_candidate,
+    clippy::missing_panics_doc,
+    clippy::identity_op
+)]
 
 fn find_reflection<T: Eq, F: Fn(&[T], &[T]) -> bool>(data: &[T], eq: F) -> usize {
     (1..data.len())

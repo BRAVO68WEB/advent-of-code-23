@@ -1,4 +1,8 @@
-#![allow(clippy::must_use_candidate, clippy::missing_panics_doc, clippy::identity_op)]
+#![allow(
+    clippy::must_use_candidate,
+    clippy::missing_panics_doc,
+    clippy::identity_op
+)]
 use rayon::iter::{ParallelBridge, ParallelIterator};
 use static_init::dynamic;
 use std::collections::BTreeMap;
@@ -78,7 +82,8 @@ pub fn part2(data: &str) -> Option<usize> {
     // Generate starting points for traversal in all four directions
     let right_starts = (0..grid.len()).map(|y| (y, 0, Direction::R));
     let down_starts = (0..grid.first()?.len()).map(|x| (0, x, Direction::D));
-    let left_starts = (0..grid.len()).filter_map(|y| Some((y, grid[y].len().checked_sub(1)?, Direction::L)));
+    let left_starts =
+        (0..grid.len()).filter_map(|y| Some((y, grid[y].len().checked_sub(1)?, Direction::L)));
     let up_starts = (0..grid.last()?.len()).map(|x| (grid.len() - 1, x, Direction::U));
 
     // Combine all starting points and process in parallel

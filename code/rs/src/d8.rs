@@ -30,20 +30,23 @@ pub fn part1(input: &str) -> u64 {
     instructions
         .chars()
         .cycle()
-        .fold_while((0, "AAA".to_string()), |(steps, mut current), instruction| {
-            if current == "ZZZ" {
-                return FoldWhile::Done((steps, current));
-            }
+        .fold_while(
+            (0, "AAA".to_string()),
+            |(steps, mut current), instruction| {
+                if current == "ZZZ" {
+                    return FoldWhile::Done((steps, current));
+                }
 
-            let children = map.get(&current).unwrap();
-            current = match instruction {
-                'L' => children[0].clone(),
-                'R' => children[1].clone(),
-                _ => unreachable!(),
-            };
+                let children = map.get(&current).unwrap();
+                current = match instruction {
+                    'L' => children[0].clone(),
+                    'R' => children[1].clone(),
+                    _ => unreachable!(),
+                };
 
-            FoldWhile::Continue((steps + 1, current))
-        })
+                FoldWhile::Continue((steps + 1, current))
+            },
+        )
         .into_inner()
         .0
 }

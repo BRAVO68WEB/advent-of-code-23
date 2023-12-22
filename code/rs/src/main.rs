@@ -32,10 +32,7 @@ fn main() {
     let now = std::time::Instant::now();
 
     for (day, main) in mains.iter().enumerate() {
-        println!(
-            "-- Day {} --",
-            day + 1
-        );
+        println!("-- Day {} --", day + 1);
         main();
         println!();
     }

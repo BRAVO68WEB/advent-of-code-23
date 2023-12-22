@@ -9,7 +9,13 @@ fn build_differences(line: &str) -> Vec<Vec<i64>> {
         .collect::<Vec<_>>();
 
     std::iter::successors(Some(values), |values| {
-        Some(values.iter().tuple_windows().map(|(a, b)| b - a).collect::<Vec<_>>())
+        Some(
+            values
+                .iter()
+                .tuple_windows()
+                .map(|(a, b)| b - a)
+                .collect::<Vec<_>>(),
+        )
     })
     .take_while(|values| values.iter().any(|value| *value != 0))
     .collect::<Vec<_>>()
@@ -19,10 +25,13 @@ pub fn part1(input: &str) -> i64 {
     input
         .lines()
         .map(|line| {
-            build_differences(line).iter().rev().fold(0, |extrapolated, values| {
-                let last_value = values.last().unwrap();
-                extrapolated + last_value
-            })
+            build_differences(line)
+                .iter()
+                .rev()
+                .fold(0, |extrapolated, values| {
+                    let last_value = values.last().unwrap();
+                    extrapolated + last_value
+                })
         })
         .sum()
 }
@@ -31,10 +40,13 @@ pub fn part2(input: &str) -> i64 {
     input
         .lines()
         .map(|line| {
-            build_differences(line).iter().rev().fold(0, |extrapolated, values| {
-                let first_value = values.first().unwrap();
-                first_value - extrapolated
-            })
+            build_differences(line)
+                .iter()
+                .rev()
+                .fold(0, |extrapolated, values| {
+                    let first_value = values.first().unwrap();
+                    first_value - extrapolated
+                })
         })
         .sum()
 }

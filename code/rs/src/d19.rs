@@ -1,4 +1,8 @@
-#![allow(clippy::must_use_candidate, clippy::missing_panics_doc, clippy::identity_op)]
+#![allow(
+    clippy::must_use_candidate,
+    clippy::missing_panics_doc,
+    clippy::identity_op
+)]
 use std::cmp::{max, min, Ordering};
 use std::collections::HashMap;
 

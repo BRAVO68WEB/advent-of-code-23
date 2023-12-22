@@ -1,7 +1,11 @@
-#![allow(clippy::must_use_candidate, clippy::missing_panics_doc, clippy::identity_op)]
+#![allow(
+    clippy::must_use_candidate,
+    clippy::missing_panics_doc,
+    clippy::identity_op
+)]
+use lazy_static::lazy_static;
 use std::collections::hash_map::Entry::Vacant;
 use std::collections::{HashMap, HashSet, VecDeque};
-use lazy_static::lazy_static;
 
 struct Garden {
     rocks: HashSet<(isize, isize)>,
@@ -36,7 +40,6 @@ fn parse(input: &str) -> (Garden, (isize, isize)) {
 
     (Garden { rocks }, (width as isize, height as isize))
 }
-
 
 fn generate_neighbors(position: (isize, isize)) -> Vec<(isize, isize)> {
     vec![
@@ -79,7 +82,6 @@ pub fn part1(input: &'static str) -> String {
 
     solve_steps(garden.0, 64).to_string()
 }
-
 
 pub fn part2(input: &'static str) -> String {
     let (garden, (width, height)) = parse(input);
@@ -130,11 +132,8 @@ pub fn part2(input: &'static str) -> String {
     (visited_inside + visited_outside).to_string()
 }
 
-
 lazy_static! {
-    static ref INPUT: &'static str = {
-        include_str!("../../../input/21.txt").trim()
-    };
+    static ref INPUT: &'static str = { include_str!("../../../input/21.txt").trim() };
 }
 
 pub fn main() {

@@ -1,4 +1,8 @@
-#![allow(clippy::must_use_candidate, clippy::missing_panics_doc, clippy::range_plus_one)]
+#![allow(
+    clippy::must_use_candidate,
+    clippy::missing_panics_doc,
+    clippy::range_plus_one
+)]
 
 use std::ops::Range;
 
@@ -84,11 +88,14 @@ fn parse_input(input: &str) -> (Vec<u64>, Mappings) {
 
 pub fn part1(input: &str) -> u64 {
     let (seeds, mappings) = parse_input(input);
-    map_seeds_ranges(seeds.iter().map(|&seed| seed..seed + 1).collect(), &mappings)
-        .iter()
-        .min_by_key(|range| range.start)
-        .unwrap()
-        .start
+    map_seeds_ranges(
+        seeds.iter().map(|&seed| seed..seed + 1).collect(),
+        &mappings,
+    )
+    .iter()
+    .min_by_key(|range| range.start)
+    .unwrap()
+    .start
 }
 
 pub fn part2(input: &str) -> u64 {

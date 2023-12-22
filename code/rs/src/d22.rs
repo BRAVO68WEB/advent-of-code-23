@@ -1,4 +1,8 @@
-#![allow(clippy::must_use_candidate, clippy::missing_panics_doc, clippy::identity_op)]
+#![allow(
+    clippy::must_use_candidate,
+    clippy::missing_panics_doc,
+    clippy::identity_op
+)]
 use std::{
     collections::{BTreeMap, BTreeSet, VecDeque},
     fmt::{Debug, Display},
@@ -210,7 +214,6 @@ fn part2(input: &Input) -> usize {
         })
         .sum()
 }
-
 
 pub fn main() {
     let input = include_str!("../../../input/22.txt");

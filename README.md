@@ -13,13 +13,13 @@ Languages used:
 
 ### TypeScript
 
-![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/bravo68web/advent-of-code-23/runner-ts.yaml?style=for-the-badge&logo=typescript&label=AoC%20Test%20Runner%20(Typescript)&labelColor=white)
+![GitHub Workflow Status (with event)](<https://img.shields.io/github/actions/workflow/status/bravo68web/advent-of-code-23/runner-ts.yaml?style=for-the-badge&logo=typescript&label=AoC%20Test%20Runner%20(Typescript)&labelColor=white>)
 
 Check [README.md](code/ts/README.md) in the `ts` directory.
 
 ### Rust
 
-![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/bravo68web/advent-of-code-23/runner-rs.yaml?style=for-the-badge&logo=rust&label=AoC%20Test%20Runner%20(Rust)&labelColor=back)
+![GitHub Workflow Status (with event)](<https://img.shields.io/github/actions/workflow/status/bravo68web/advent-of-code-23/runner-rs.yaml?style=for-the-badge&logo=rust&label=AoC%20Test%20Runner%20(Rust)&labelColor=back>)
 
 Check [README.md](code/rs/README.md) in the `rs` directory.
 

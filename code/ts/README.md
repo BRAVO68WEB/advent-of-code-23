@@ -3,7 +3,7 @@
 This is my repository for the [Advent of Code 2023](https://adventofcode.com/2023) challenge.
 
 | AOC Day | Solution                       |
-|---------|--------------------------------|
+| ------- | ------------------------------ |
 | Day 1   | [Check Solution](01/README.md) |
 | Day 2   | [Check Solution](02/README.md) |
 | Day 3   | [Check Solution](03/README.md) |

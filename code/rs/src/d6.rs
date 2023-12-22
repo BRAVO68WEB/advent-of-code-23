@@ -26,9 +26,18 @@ pub fn part1(input: &str) -> usize {
 
 pub fn part2(input: &str) -> usize {
     let mut input = input.lines();
-    let time = parse_numbers_str(&mut input).replace(' ', "").parse::<u64>().unwrap();
-    let distances = parse_numbers_str(&mut input).replace(' ', "").parse::<u64>().unwrap();
-    (0..time).into_par_iter().filter(|i| i * (time - i) > distances).count()
+    let time = parse_numbers_str(&mut input)
+        .replace(' ', "")
+        .parse::<u64>()
+        .unwrap();
+    let distances = parse_numbers_str(&mut input)
+        .replace(' ', "")
+        .parse::<u64>()
+        .unwrap();
+    (0..time)
+        .into_par_iter()
+        .filter(|i| i * (time - i) > distances)
+        .count()
 }
 
 pub fn main() {

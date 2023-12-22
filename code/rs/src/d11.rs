@@ -1,12 +1,17 @@
-#![allow(clippy::must_use_candidate, clippy::missing_panics_doc, clippy::identity_op)]
+#![allow(
+    clippy::must_use_candidate,
+    clippy::missing_panics_doc,
+    clippy::identity_op
+)]
 
 fn calculate_distances(galaxies: &Vec<usize>, columns_to_add: usize) -> usize {
-    galaxies.iter()
+    galaxies
+        .iter()
         .enumerate()
         .filter(|(_, g)| **g != 0)
         .map(|(i, g)| {
             (i + 1..galaxies.len())
-                .scan(0,|traversed_distance, j| {
+                .scan(0, |traversed_distance, j| {
                     *traversed_distance += if galaxies[j] == 0 { columns_to_add } else { 1 };
                     Some(*traversed_distance * *g * galaxies[j])
                 })
@@ -48,7 +53,8 @@ pub fn part2(input: &str) -> usize {
         .map(|j| map.iter().filter(|row| row[j] == '#').count())
         .collect::<Vec<_>>();
 
-    calculate_distances(&galaxies_per_row, 1_000_000) + calculate_distances(&galaxies_per_column, 1_000_000)
+    calculate_distances(&galaxies_per_row, 1_000_000)
+        + calculate_distances(&galaxies_per_column, 1_000_000)
 }
 
 pub fn main() {

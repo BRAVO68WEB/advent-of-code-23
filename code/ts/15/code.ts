@@ -2,7 +2,7 @@ const input = await Bun.file(`${import.meta.dir}/../../../input/15.txt`).text();
 
 type SequenceData = {
   label: string;
-  operation: '-' | '=';
+  operation: "-" | "=";
   focalLength: string;
 };
 
@@ -14,7 +14,7 @@ function solvePart1(sequences: string[]) {
 
 function computeHash(str: string) {
   return str
-    .split('')
+    .split("")
     .reduce((value, char) => ((value + char.charCodeAt(0)) * 17) % 256, 0);
 }
 
@@ -47,9 +47,9 @@ function getBox(boxes: Box[], boxId: number) {
 
 function updateBox(
   box: Map<string, number>,
-  { label, operation, focalLength }: SequenceData
+  { label, operation, focalLength }: SequenceData,
 ) {
-  if (operation === '=') {
+  if (operation === "=") {
     box.set(label, parseInt(focalLength, 10));
   } else {
     box.delete(label);
@@ -60,7 +60,7 @@ function computeFocusingPower(boxes: Box[]) {
   return boxes.reduce(
     (focusingPower, box, boxId) =>
       focusingPower + computeBoxFocusingPower(box, boxId),
-    0
+    0,
   );
 }
 
@@ -68,17 +68,14 @@ function computeBoxFocusingPower(box: Box, boxId: number) {
   return [...box].reduce(
     (focusingPower, [_label, focalLength], slotId) =>
       focusingPower + (boxId + 1) * (slotId + 1) * focalLength,
-    0
+    0,
   );
 }
 
-const sequences = input.replace(/\r\n/g, '')
-  .replace(/\n/g, '')
-  .split(',');
+const sequences = input.replace(/\r\n/g, "").replace(/\n/g, "").split(",");
 
 const part1 = solvePart1(sequences);
 const part2 = solvePart2(sequences);
 
 export const partone = part1;
 export const parttwo = part2;
-

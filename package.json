@@ -7,7 +7,10 @@
     "rs": "turbo rust",
     "aoc": "turbo aoc",
     "new": "turbo aoc:today",
-    "build": "turbo build"
+    "build": "turbo build",
+    "fmt": "bun fmt:rs && bun fmt:ts",
+    "fmt:rs": "cargo fmt",
+    "fmt:ts": "prettier --write ."
   },
   "devDependencies": {
     "@bravo68web/tsconfig": "^1.2.2",

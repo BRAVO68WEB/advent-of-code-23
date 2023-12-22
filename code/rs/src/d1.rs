@@ -1,11 +1,25 @@
-#![allow(clippy::must_use_candidate, clippy::missing_panics_doc, clippy::cast_lossless)]
+#![allow(
+    clippy::must_use_candidate,
+    clippy::missing_panics_doc,
+    clippy::cast_lossless
+)]
 
 pub fn part1(input: &str) -> u32 {
     input
         .lines()
         .map(|line: &str| {
-            let first = line.chars().find(char::is_ascii_digit).unwrap().to_digit(10).unwrap();
-            let last = line.chars().rfind(char::is_ascii_digit).unwrap().to_digit(10).unwrap();
+            let first = line
+                .chars()
+                .find(char::is_ascii_digit)
+                .unwrap()
+                .to_digit(10)
+                .unwrap();
+            let last = line
+                .chars()
+                .rfind(char::is_ascii_digit)
+                .unwrap()
+                .to_digit(10)
+                .unwrap();
             first * 10 + last
         })
         .sum()
@@ -24,8 +38,18 @@ pub fn part2(input: &str) -> u32 {
         .replace("nine", "9e")
         .lines()
         .map(|line| {
-            let first = line.chars().find(char::is_ascii_digit).unwrap().to_digit(10).unwrap();
-            let last = line.chars().rfind(char::is_ascii_digit).unwrap().to_digit(10).unwrap();
+            let first = line
+                .chars()
+                .find(char::is_ascii_digit)
+                .unwrap()
+                .to_digit(10)
+                .unwrap();
+            let last = line
+                .chars()
+                .rfind(char::is_ascii_digit)
+                .unwrap()
+                .to_digit(10)
+                .unwrap();
             first * 10 + last
         })
         .sum()
