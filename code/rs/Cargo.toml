@@ -11,6 +11,8 @@ num = "0.4.1"
 pathfinding = "4.4.0"
 rayon = "1.8.0"
 static_init = "1.0"
+lazy_static = "1.4.0"
+nom = "7"
 
 [profile.release]
 lto = "fat"
@@ -96,3 +98,11 @@ path = "src/d19.rs"
 [[bin]]
 name = "day20"
 path = "src/d20.rs"
+
+[[bin]]
+name = "day21"
+path = "src/d21.rs"
+
+[[bin]]
+name = "day22"
+path = "src/d22.rs"
