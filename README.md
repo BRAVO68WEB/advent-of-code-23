@@ -48,5 +48,5 @@ Check [README.md](code/rs/README.md) in the `rs` directory.
 -   [x] Day 21
 -   [x] Day 22
 -   [x] Day 23
--   [ ] Day 24
+-   [x] Day 24
 -   [ ] Day 25

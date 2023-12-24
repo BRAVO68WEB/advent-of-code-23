@@ -13,6 +13,9 @@ rayon = "1.8.0"
 static_init = "1.0"
 lazy_static = "1.4.0"
 nom = "7"
+derivative = "2.2.0"
+eqsolver = "0.1.2"
+nalgebra = "0.32.3"
 
 [profile.release]
 lto = "fat"
