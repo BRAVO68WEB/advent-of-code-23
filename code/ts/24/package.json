@@ -1,0 +1,15 @@
+{
+    "name": "24",
+    "type": "module",
+    "module": "code.ts",
+    "scripts": {
+        "build": "tsc",
+        "dev": "bun run code.ts"
+    },
+    "peerDependencies": {
+        "typescript": "^5.0.0"
+    },
+    "devDependencies": {
+        "bun-types": "latest"
+    }
+}

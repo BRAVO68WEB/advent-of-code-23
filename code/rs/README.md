@@ -28,7 +28,7 @@ This is my repository for the [Advent of Code 2023](https://adventofcode.com/202
 | Day 22  | [Check Solution](src/d22.rs) |
 | Day 23  | [Check Solution](src/d23.rs) |
 | Day 24  | [Check Solution](src/d24.rs) |
-| Day 25  | Not Released                 |
+| Day 25  | [Check Solution](src/d25.rs) |
 
 ## How to run
 
