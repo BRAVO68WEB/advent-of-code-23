@@ -1,4 +1,4 @@
-# Advent of Code 2023
+# Advent of Code 2023 (Completed)
 
 ![AoC23](https://repository-images.githubusercontent.com/726431802/c8e91bfc-1db4-4fa8-93b2-dcb8cf18cc0c)
 
@@ -50,3 +50,9 @@ Check [README.md](code/rs/README.md) in the `rs` directory.
 -   [x] Day 23
 -   [x] Day 24
 -   [x] Day 25
+
+## License
+
+All solutions for [AoC 2023](https://adventofcode.com/2023) by BRAVO68WEB is licensed under [CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0/)
+
+> Merry Christmas and Happy New Year 2024!
