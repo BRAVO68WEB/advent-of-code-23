@@ -24,12 +24,13 @@ for (const [from, to] of edges) {
 const groupings = Array.from({ length: length }, (_, i) => [i]);
 let t = 0;
 let max = length;
-while (max --> 0) {
+while (max > 0) {
     const weights = [...adjmap[0]];
     let s = 0;
-    t = 0;
+    let t = 0;
     let loops = max;
-    while (loops --> 0) {
+    while (loops > 0) {
+        loops--;
         weights[t] = -Infinity;
         s = t;
         t = weights.indexOf(Math.max(...weights));
@@ -48,6 +49,7 @@ while (max --> 0) {
     }
 
     adjmap[0][t] = -Infinity;
+    max--;
 }
 
 const groupA = groupings[t].length;
