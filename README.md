@@ -49,4 +49,4 @@ Check [README.md](code/rs/README.md) in the `rs` directory.
 -   [x] Day 22
 -   [x] Day 23
 -   [x] Day 24
--   [ ] Day 25
+-   [x] Day 25
