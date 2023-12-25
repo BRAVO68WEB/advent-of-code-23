@@ -51,7 +51,7 @@ fn generate_neighbors(position: (isize, isize)) -> Vec<(isize, isize)> {
 }
 
 fn solve_steps(garden: Garden, num_steps: isize) -> usize {
-    let mut queue = vec![((0, 0), 0)]; // position, number of steps so far
+    let mut queue = vec![((0, 0), 0)];
     let mut visited = HashSet::new();
 
     while let Some(state) = queue.pop() {

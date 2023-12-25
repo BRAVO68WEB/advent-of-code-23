@@ -18,13 +18,11 @@ fn build_part_map(map: &Matrix<char>) -> BTreeMap<(usize, usize), Vec<u64>> {
                 .take_while(|(_, c)| c.is_ascii_digit())
                 .collect::<Vec<_>>();
 
-            // Check if is part number
             if let Some(gear) = number
                 .iter()
                 .flat_map(|(j, _)| map.neighbours((i, *j), true))
                 .find(|(i, j)| map[(*i, *j)] != '.' && !map[(*i, *j)].is_numeric())
             {
-                // Parse number
                 let n = number
                     .into_iter()
                     .map(|(_, c)| c)
@@ -32,7 +30,6 @@ fn build_part_map(map: &Matrix<char>) -> BTreeMap<(usize, usize), Vec<u64>> {
                     .parse::<u64>()
                     .unwrap();
 
-                // Add to part numbers
                 part_numbers.entry(gear).or_default().push(n);
             }
         }

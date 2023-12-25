@@ -79,7 +79,6 @@ fn part1(input: &str) -> usize {
     let graph = parse_graph(input);
     let vertices: Vec<&str> = graph.keys().map(|x| *x).collect();
     let mut set1: Vec<&str> = Vec::new();
-    // Add vertex 0 to the set
     set1.push(vertices[0]);
     let mut j = 0;
     while j < set1.len() {

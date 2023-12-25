@@ -58,7 +58,6 @@ fn part2(input: &str) -> usize {
             acc += (i + 1) * (j + 1) * f.1 as usize;
         }
     }
-    // return as integer
     acc
 }
 

@@ -91,11 +91,9 @@ impl Brick {
     fn move_down(&mut self) {
         self.min.z -= 1;
         self.max.z -= 1;
-        // this is probably inefficient?
         self.cubes = Self::cubes(self.min, self.max);
     }
 
-    // generate all the cubes for this brick
     fn cubes(min: Triple, max: Triple) -> BTreeSet<Triple> {
         (min.z..=max.z)
             .flat_map(|z| {
@@ -129,25 +127,19 @@ impl Ord for Brick {
 }
 
 fn settle(input: &[Brick]) -> Input {
-    // sort the bricks by z index
     let mut bricks = input.to_vec();
     bricks.sort();
 
-    // The 3D tower, with brick id being the value
     let mut settled: BTreeMap<Triple, usize> = BTreeMap::new();
 
-    // the "graph" indicating which bricks support other bricks
     let mut holding_up: SupportMap = BTreeMap::new();
     let mut sitting_on: SupportMap = BTreeMap::new();
 
     for brick in bricks.iter_mut() {
-        // set up our graph from here
         holding_up.insert(brick.id, BTreeSet::new());
         sitting_on.insert(brick.id, BTreeSet::new());
 
-        // move down until we find something below us
         let bricks_below = loop {
-            // if we hit the ground, return nothing
             if brick.on_ground() {
                 break vec![];
             }
@@ -159,7 +151,6 @@ fn settle(input: &[Brick]) -> Input {
                 .cloned()
                 .collect();
 
-            // if there are bricks below us, return their IDs
             if !bricks_below.is_empty() {
                 break bricks_below;
             }
@@ -167,10 +158,8 @@ fn settle(input: &[Brick]) -> Input {
             brick.move_down();
         };
 
-        // now that we dropped all the way, set the id where we landed
         settled.extend(brick.cubes.iter().map(|c| (*c, brick.id)));
 
-        // set up the graph for each of the bricks
         for below in bricks_below {
             holding_up.entry(below).or_default().insert(brick.id);
             sitting_on.entry(brick.id).or_default().insert(below);
@@ -194,14 +183,11 @@ fn part2(input: &Input) -> usize {
     holding_up
         .iter()
         .map(|(brick, above)| {
-            // start considering everything above us
             let mut queue: VecDeque<usize> = VecDeque::from_iter(above.iter().cloned());
             let mut unsupported: BTreeSet<usize> = BTreeSet::from_iter(vec![*brick]);
 
             while let Some(brick) = queue.pop_front() {
-                // if all of the bricks that we're sitting on are unsupported
                 if sitting_on[&brick].is_subset(&unsupported) {
-                    // this one is unsupported, and consider the rest of the ones sitting on us
                     unsupported.insert(brick);
                     for b in &holding_up[&brick] {
                         queue.push_back(*b);
@@ -209,7 +195,6 @@ fn part2(input: &Input) -> usize {
                 }
             }
 
-            // discount the original brick we put in the falling set to get the rest of it to work
             unsupported.len() - 1
         })
         .sum()

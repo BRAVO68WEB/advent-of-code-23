@@ -71,7 +71,6 @@ const crossings = {} as Record<
     }
 >;
 
-// Find all crossroads
 const dots = matrixFindElements(matrix, { value: "." });
 for (const [pos] of dots) {
     const neigs = xydirections(pos)
@@ -85,7 +84,6 @@ crossings[xykey(target)] = { pos: target, paths: {} };
 const m2 = matrixClone(matrix);
 Object.values(crossings).forEach(({ pos }) => matrixSet(m2, pos, "X"));
 
-// Find path lengths between crossroads
 for (const crossing of Object.values(crossings)) {
     const xpos = crossing.pos;
     const neigs = xydirections(xpos);
@@ -105,7 +103,6 @@ for (const crossing of Object.values(crossings)) {
     }
 }
 
-// Find longest path through crossroads
 const itFinder2 = findPathsFlexi<[string, string[]]>({
     startNodes: [[xykey(start), [xykey(start)]]],
     endCondition: ([key]) => key == xykey(target),
@@ -115,7 +112,6 @@ const itFinder2 = findPathsFlexi<[string, string[]]>({
             .map(v => [v, [...path, v]]),
     costFn: ([to], cost, [from]) => cost + crossings[from].paths[to],
     prioritizeHighCost: true,
-    // Importantly, no cacheKeyFn passed in
 });
 
 let max2 = 0;

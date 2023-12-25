@@ -74,7 +74,7 @@ export const part1 = (input: string): string | number => {
         const startY = py + vy * startTime;
         const endY = py + vy * endTime;
         if (startTime > endTime) {
-            return false; // X and Y don't fall in zone at the same time
+            return false;
         }
         return {
             start: xy(startX, startY),
@@ -88,7 +88,7 @@ export const part1 = (input: string): string | number => {
         const [[aPX, aPY], [aVX, aVY]] = hailstones[i];
         const aBounds = hailstoneBounds[i] || getBounds(aPX, aPY, aVX, aVY);
         hailstoneBounds[i] = aBounds;
-        if (!aBounds) continue; // Not in zone
+        if (!aBounds) continue;
         for (let j = 1; j < hailstones.length; j++) {
             if (i === j) continue;
             const pairKey = (i < j ? [i, j] : [j, i]).join(":");
@@ -97,7 +97,7 @@ export const part1 = (input: string): string | number => {
             const [[bPX, bPY], [bVX, bVY]] = hailstones[j];
             const bBounds = hailstoneBounds[j] || getBounds(bPX, bPY, bVX, bVY);
             hailstoneBounds[j] = bBounds;
-            if (!bBounds) continue; // Not in zone
+            if (!bBounds) continue;
             if (getSegmentIntersection(aBounds.start, aBounds.end, bBounds.start, bBounds.end)) {
                 intersections++;
             }

@@ -59,14 +59,12 @@ impl HandType {
             .collect::<Vec<_>>()
             .as_slice()
         {
-            // Five of a kind
             [(5, _)]
             | [(4, Card::Joker), (1, _)]
             | [(4, _), (1, Card::Joker)]
             | [(3, _), (2, Card::Joker)]
             | [(3, Card::Joker), (2, _)] => Self::FiveOfAKind,
 
-            // Four of a kind
             [(4, _), (1, _)]
             | [(3, Card::Joker), (1, _), (1, _)]
             | [(3, _), (1, Card::Joker), (1, _)]
@@ -74,10 +72,8 @@ impl HandType {
             | [(2, Card::Joker), (2, _), (1, _)]
             | [(2, _), (2, Card::Joker), (1, _)] => Self::FourOfAKind,
 
-            // Full house
             [(3, _), (2, _)] | [(2, _), (2, _), (_, Card::Joker)] => Self::FullHouse,
 
-            // Three of a kind
             [(3, _), (_, _), (_, _)] | [(2, Card::Joker), (1, _), (1, _), (1, _)] => {
                 Self::ThreeOfAKind
             }
@@ -85,14 +81,11 @@ impl HandType {
                 Self::ThreeOfAKind
             }
 
-            // Two pair
             [(2, _), (2, _), (_, _)] => Self::TwoPair,
 
-            // One pair
             [(2, _), (_, _), (_, _), (_, _)] => Self::OnePair,
             cc if cc.contains(&(&1, &&Card::Joker)) => Self::OnePair,
 
-            // High card
             [(1, _), (_, _), (_, _), (_, _), (_, _)] => Self::HighCard,
 
             hand => panic!("Invalid hand {hand:?}"),

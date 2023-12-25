@@ -76,17 +76,14 @@ pub fn part1(data: &str) -> Option<usize> {
 }
 
 pub fn part2(data: &str) -> Option<usize> {
-    // Split the input string into lines and collect into a vector
     let grid = data.lines().collect::<Vec<_>>();
 
-    // Generate starting points for traversal in all four directions
     let right_starts = (0..grid.len()).map(|y| (y, 0, Direction::R));
     let down_starts = (0..grid.first()?.len()).map(|x| (0, x, Direction::D));
     let left_starts =
         (0..grid.len()).filter_map(|y| Some((y, grid[y].len().checked_sub(1)?, Direction::L)));
     let up_starts = (0..grid.last()?.len()).map(|x| (grid.len() - 1, x, Direction::U));
 
-    // Combine all starting points and process in parallel
     let result = right_starts
         .chain(down_starts)
         .chain(left_starts)
@@ -95,7 +92,6 @@ pub fn part2(data: &str) -> Option<usize> {
         .filter_map(|(y, x, direction)| fill(&grid, y, x, direction))
         .max();
 
-    // Return the result
     result
 }
 
