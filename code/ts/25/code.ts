@@ -4,15 +4,15 @@ const edges = [];
 const nodes = new Set<string>();
 
 for (const [fromorig, ...too] of input) {
-    const from = fromorig.substring(0, fromorig.length-1)
+    const from = fromorig.substring(0, fromorig.length - 1);
     nodes.add(from);
     for (const to of too) {
         nodes.add(to);
-        edges.push([from, to].sort((a, b) => a.localeCompare(b)))
+        edges.push([from, to].sort((a, b) => a.localeCompare(b)));
     }
 }
 
-const seqid = Object.fromEntries([...nodes].map((name, i) => [name, i]))
+const seqid = Object.fromEntries([...nodes].map((name, i) => [name, i]));
 const length = nodes.size;
 
 const adjmap: number[][] = Array.from({ length }, () => Array.from({ length }, () => 0));
@@ -24,12 +24,12 @@ for (const [from, to] of edges) {
 const groupings = Array.from({ length: length }, (_, i) => [i]);
 let t = 0;
 let max = length;
-while (max --> 0) {
+while (max-- > 0) {
     const weights = [...adjmap[0]];
     let s = 0;
     t = 0;
     let loops = max;
-    while (loops --> 0) {
+    while (loops-- > 0) {
         weights[t] = -Infinity;
         s = t;
         t = weights.indexOf(Math.max(...weights));

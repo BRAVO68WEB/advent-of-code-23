@@ -103,12 +103,6 @@ fn part1(input: &str) -> usize {
 
 pub fn main() {
     let input: &str = include_str!("../../../input/25.txt");
-    println!(
-        "Part 1 : {}",
-        part1(input,)
-    );
-    println!(
-        "Part 2 : {}",
-        "Merry Christmas!"
-    );
+    println!("Part 1 : {}", part1(input,));
+    println!("Part 2 : {}", "Merry Christmas!");
 }

@@ -4,9 +4,9 @@
     "type": "module",
     "module": "index.ts",
     "scripts": {
-        "dev": "bun run rs && bun run ts",
         "aoc": "turbo aoc",
         "build": "turbo build",
+        "dev": "bun run rs && bun run ts",
         "fmt": "bun fmt:rs && bun fmt:ts",
         "fmt:rs": "cargo fmt",
         "fmt:ts": "prettier --write .",
